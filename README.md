@@ -56,18 +56,33 @@ jwt/
 
 1. **Clone or download the project**
 
+   ```bash
+   git clone https://github.com/datkrb/JWT_Login.git
+   cd JWT_Login
+   ```
+
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
-3. **Start the backend server** (in one terminal):
+3. **Create `.env.local` for local development:**
+
+   ```bash
+   # Copy .env.example
+   cp .env.example .env.local
+   ```
+
+4. **Start the backend server** (in one terminal):
+
    ```bash
    npm run server
    ```
+
    The server will run on `http://localhost:5000`
 
-4. **Start the development server** (in another terminal):
+5. **Start the development server** (in another terminal):
    ```bash
    npm run dev
    ```
@@ -81,6 +96,7 @@ Use these credentials to test the application:
 - **Password:** `password123`
 
 Alternative:
+
 - **Email:** `admin@example.com`
 - **Password:** `admin123`
 
@@ -104,6 +120,7 @@ Alternative:
 ### Protected Routes
 
 The `ProtectedRoute` component:
+
 - Checks for valid tokens
 - Fetches user data using React Query
 - Redirects to login if unauthenticated
@@ -120,40 +137,7 @@ The mock backend provides these endpoints:
 
 ## Deployment
 
-### Build for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory.
-
-### Deploy to Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in the project directory
-3. Follow the prompts
-
-### Deploy to Netlify
-
-1. Install Netlify CLI: `npm i -g netlify-cli`
-2. Build the project: `npm run build`
-3. Deploy: `netlify deploy --prod --dir=dist`
-
-### Deploy to GitHub Pages
-
-See the [Vite deployment guide](https://vitejs.dev/guide/static-deploy.html#github-pages) for details.
-
-**Note:** For production deployment, you'll need to:
-- Update the API base URL in `src/lib/api.ts` to point to your backend
-- Set up a real backend server (the included server is for development only)
-- Use environment variables for API endpoints
-
-## Public Hosting URL
-
-After deployment, update this section with your public URL:
-
-**Live URL:** [Your deployment URL here]
+**Backend API:** Must be deployed separately (not included in this frontend deployment)
 
 ## Features Explained
 
@@ -196,4 +180,3 @@ MIT
 ## Author
 
 Built as a learning project for JWT authentication in React applications.
-
