@@ -7,8 +7,15 @@ import {
 } from "../types/auth";
 
 // Create axios instance
+// Determine API base URL:
+// - In production set VITE_API_URL (e.g. https://api.example.com)
+// - In development we use the Vite proxy at `/api`
+const apiBase = (import.meta.env && import.meta.env.VITE_API_URL)
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "/api";
+
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: apiBase,
   headers: {
     "Content-Type": "application/json",
   },
