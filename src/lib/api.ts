@@ -60,9 +60,9 @@ const refreshAccessToken = async (): Promise<string> => {
     // Use plain axios to avoid interceptor recursion
     // In development, Vite proxy handles /api
     // In production, use environment variable or same origin
-    const baseURL = import.meta.env.VITE_API_URL || "";
+    const apiURL = import.meta.env.VITE_API_URL || window.location.origin;
     const response = await axios.post<RefreshResponse>(
-      `${baseURL}/api/auth/refresh`,
+      `${apiURL}/api/auth/refresh`,
       { refreshToken },
       {
         headers: {
